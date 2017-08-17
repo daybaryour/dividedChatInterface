@@ -1,14 +1,25 @@
-# NodeAngular
+# 2 sided chat interface
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
+This project is simple two sided conversational interface, on the left is the chat, while on the right is other information
 
-## Description
-This project is a qick getting started application for angular projects on a node server
+Inspiration is as drawn from IBM's hiring platform, the 2 sided interface
+Template from Codrops Grid Item Animation Layout https://tympanus.net/codrops/2015/04/15/grid-item-animation-layout/
 
-## Prerquisites
+Also Ife thanks for redrawing my attention to what could be done 
+
+Project was built on angular cli, Express and nodeJs
+
+## Pre-requisites
 You must have angular cli installed
 
 ## Getting started
-Clone repository
+Clone this repository, 
+    run `npm install` to install modules
     run `ng build` to build the project
-    run `npm start`
+    run `npm start` to start running on an express server
+
+Go to `localhost:3000` to view your application
+
+
+## Contributions
+Contributions are very much welcome, looking forward to them. Thanks in advance
