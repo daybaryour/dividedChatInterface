@@ -152,7 +152,7 @@ button:focus {
 .talk-bubble {
     margin: 10px;
     position: relative;
-    width: 80%;
+    max-width: 80%;
     height: auto;
     background-color: lightyellow;
     float: right;
@@ -180,7 +180,7 @@ button:focus {
     right: -10px;
     top: 8px;
     bottom: auto;
-    border: 12px solid;
+    border: 8px solid;
     border-color: lightyellow transparent transparent lightyellow;
 }
 

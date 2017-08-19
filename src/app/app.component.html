@@ -2,81 +2,31 @@
     <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
     <div id="theSidebar" class="sidebar">
         <div class="chat__ui">
-            <div class="chat_msg_display">
-                <div class="chat_message comp_message">
-                    <div class="comp-bar-icon"></div>
-                    <div class="chat__left">
-                        Whoops, something went wrong trying to communicate with the server. Please try again.
+            <div id="chat_msg" class="chat_msg_display">
+                <div class="chat_message" *ngFor="let message of parsed_convo">
+                    <div class="comp_message" *ngIf="message.sender == 'system'">
+                        <div class="comp-bar-icon"></div>
+                        <div class="chat__left">
+                            You said {{ message.message }}
+                        </div>
+                    </div>
+                    <div *ngIf="message.sender == 'user'">
+                        <div class="talk-bubble tri-right round right-in">
+                            <div class="talktext">
+                                <p>{{ message.message }}</p>
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>
                     </div>
                 </div>
                 <div class="chat_message user_message">
-                    <div class="talk-bubble tri-right round right-in">
-                        <div class="talktext">
-                            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
-                </div>
-                <div class="chat_message comp_message">
-                    <div class="comp-bar-icon"></div>
-                    <div class="chat__left">
-                        Whoops, something went wrong trying to communicate with the server. Please try again.
-                    </div>
-                </div>
-                <div class="chat_message user_message">
-                    <div class="talk-bubble tri-right round right-in">
-                        <div class="talktext">
-                            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
-                </div>
-                <div class="chat_message comp_message">
-                    <div class="comp-bar-icon"></div>
-                    <div class="chat__left">
-                        Whoops, something went wrong trying to communicate with the server. Please try again.
-                    </div>
-                </div>
-                <div class="chat_message user_message">
-                    <div class="talk-bubble tri-right round right-in">
-                        <div class="talktext">
-                            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
-                </div>
-                <div class="chat_message comp_message">
-                    <div class="comp-bar-icon"></div>
-                    <div class="chat__left">
-                        Whoops, something went wrong trying to communicate with the server. Please try again.
-                    </div>
-                </div>
-                <div class="chat_message user_message">
-                    <div class="talk-bubble tri-right round right-in">
-                        <div class="talktext">
-                            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
-                </div>
-                <div class="chat_message comp_message">
-                    <div class="comp-bar-icon"></div>
-                    <div class="chat__left">
-                        Whoops, something went wrong trying to communicate with the server. Please try again.
-                    </div>
-                </div>
-                <div class="chat_message user_message">
-                    <div class="talk-bubble tri-right round right-in">
-                        <div class="talktext">
-                            <p>Moving our way back up the right side indented. Uses .round and .right-in</p>
-                        </div>
-                    </div>
-                    <div style="clear:both"></div>
+
                 </div>
             </div>
 
             <div class="chat_response">
-                <input placeholder="Type Here" class="chat_response_input" /><span class="text-icon"> <i class="fa fa-arrow-right"></i></span>
+                <input #message (keyup.enter)="sendConversationMessage(message.value)" id="chatInputMessage" placeholder="Type Here" class="chat_response_input" />
+                <span (click)="sendConversationMessage(message.value)" class="text-icon"> <i class="fa fa-arrow-right"></i></span>
             </div>
         </div>
     </div>
