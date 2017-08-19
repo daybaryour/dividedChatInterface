@@ -4,7 +4,7 @@ This project is simple two sided conversational interface, on the left is the ch
 
 Inspiration is as drawn from IBM's hiring platform, the 2 sided interface
 Template from Codrops Grid Item Animation Layout https://tympanus.net/codrops/2015/04/15/grid-item-animation-layout/
-
+Also thanks to Jason Founts for the chat bubble interface in CSS https://codepen.io/Founts/pen/gmhcl
 Also Ife thanks for redrawing my attention to what could be done 
 
 Project was built on angular cli, Express and nodeJs
