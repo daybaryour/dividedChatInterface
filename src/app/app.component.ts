@@ -21,15 +21,11 @@ export class AppComponent {
 	//Initialize this when page is opened
 	ngOnInit() {
 		this.conversation = [];
-		
-		// this._conversationService.startConversation()
-        //         .subscribe(chat => {
-		// 			//Set the conversation chat to the response
 
-		// 			//Scroll to the bottom of the chat
-		// 			this.scrollToBottom();
-        //         })
-		
+		//Feed in dummy start message, this can feed from a a service or some json file as neccesary
+		var start_message = "Hello there i'm the 2 sided chat Echo bot, developed by Adewumi Adebayo, type in anything and watch me repeat it with so much ease, as usual contributions are welcome.";
+
+		this.updateConversationUi(start_message, "system");		
 	}
 
 	sendConversationMessage(message, next_message = false) {
@@ -53,12 +49,6 @@ export class AppComponent {
 
 	updateConversationUi(message, sender)
 	{
-		//display the conversation content
-		//var curr_time:string = this.getSystemTime();
-
-		//personalize text where neccesary
-		//message = this.processOutputMessage(message)
-
         if(this.parsed_convo == null) {
         } else {    
             var conversation_length = this.parsed_convo.length;
@@ -76,7 +66,7 @@ export class AppComponent {
             
 		}
 		
-		//handle what shows next
+		//handle scrolling to buttom feature
         this.scrollToBottom(); 
 	}
 	
